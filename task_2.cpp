@@ -13,11 +13,8 @@ void Perform_operation(double num1, double num2, char operation)
 {
     double result;
     bool validOperation = true;
-    int ch;
 
     // Perform the chosen operation
-    do
-    {
         switch (operation)
         {
         case '+':
@@ -50,19 +47,17 @@ void Perform_operation(double num1, double num2, char operation)
         {
             cout << "Result: " << num1 << " " << operation << " " << num2 << " = " << result << endl;
         }
-
-        cout << "Do you want to perform Next operation choose(1/0) :" << endl;
-        cin >> ch;
-    } while (ch != 0);
 }
 int main()
 {
     double num1, num2;
     char operation;
+    int ch;
 
     cout << "Simple Calculator Program" << endl;
     cout << "------------------------" << endl;
 
+    do{
     // Get input from the user
     cout << "Enter the first number: " << endl;
     cin >> num1;
@@ -74,6 +69,9 @@ int main()
     cin >> operation;
 
     Perform_operation(num1, num2, operation);
+    cout << "Do you want to perform Next operation choose(1/0) :" << endl;
+    cin >> ch;
+    } while (ch != 0);
 
     return 0;
 }
